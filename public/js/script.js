@@ -144,7 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	fetch("../package.json")
 		.then((response) => response.json())
 		.then((data) => {
-			document.getElementById("version").textContent = `v${data.version}`;
+			const versionElement = document.getElementById("version");
+			if (versionElement) {
+				versionElement.textContent = `v${data.version}`;
+			}
 		});
 	document.body.setAttribute(
 		"theme",

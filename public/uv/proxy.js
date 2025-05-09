@@ -54,10 +54,12 @@ function start(url) {
 	sessionStorage.setItem("rawurl", url);
 }
 
-form.addEventListener("submit", async (event) => {
-	event.preventDefault();
+if (form) {
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-	const url = search(address.value, searchEngine.value);
-	start(url);
-});
+        const url = search(address.value, searchEngine.value);
+        start(url);
+    });
+}
 console.log("Proxy started");
